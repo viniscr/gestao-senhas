@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+<title>Painel Gerencial</title>
+
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+<link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+</head>
+<body>
+	<div class="row">
+	<div class="card text-center col-lg-9">
+		<div class="card-header">Painel Gerencial</div>
+		<div class="card-body">
+			<form th:action="@{/gerente/proxima-senha}" method="GET">
+				<button class="btn btn-primary btn-block">Chamar Próxima
+					Senha</button>
+			</form>
+
+			<form th:action="@{/gerente/reiniciar}" method="POST">
+				<button class="btn btn-primary btn-block">Reiniciar
+					Contagem</button>
+			</form>
+			<a class="btn btn-info btn-block" href="/senhas">Retornar para
+				Painel de Cliente</a>
+		</div>
+	</div>
+	</div>
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
