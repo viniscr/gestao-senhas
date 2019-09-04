@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<meta http-equiv="refresh" content="2">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="refresh" content="2">
 
-<title>Painel de Clientes</title>
+	<title>Painel de Clientes</title>
 
-<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
-	rel="stylesheet" />
-<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
-	rel="stylesheet" />
-<link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+	<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
 </head>
+
 <body>
 	<div class="nav justify-content-end">
-		<a id="botao-gerencial" class="nav-item btn btn-danger"
-			href="/gerente" target="_blank">Área Gerencial</a>
+		<a id="botao-gerencial" class="nav-item btn btn-danger" href="/gerente" target="_blank">Área Gerencial</a>
 	</div>
-	<div class="row" style="margin-top: 30px">
+	<div class="painel-cliente row">
 		<div class="col-sm-4">
 			<div class="card">
 				<div class="card-header text-center">Solicitar Senha</div>
@@ -33,26 +31,28 @@
 				</div>
 				<div class="card-footer">
 					<div class="card-text">
-						<p>Senha Gerada:</p>
+						<p>Última senha gerada:</p>
 						<h6 class="has-text-weight-bold" th:text="${senhaGerada} ?: 'Nenhuma senha gerada'"></h6>
 					</div>
 				</div>
 			</div>
 		</div>
+
 		<div class="col-sm-4">
 			<div class="card">
 				<div class="card-header text-center">Senha Atual</div>
 				<div class="card-body" id="ultimaSenha">
-					<h1 class="text-center" th:text="${senhaChamada} ?: 'Nenhuma Senha Chamada'"></h1>
+					<h1 class="text-center" th:text="${senhaChamada} ?: 'Nenhuma senha chamada'"></h1>
 				</div>
 			</div>
 		</div>
+
 		<div class="col-sm-4">
 			<div class="card">
 				<div class="card-header text-center">Últimas senhas chamadas</div>
-				<div class="card-body">
-					<ul class="ultimas-senhas card-content" th:each="senha: ${senhasChamadas}">
-						<li th:text="${senha}"></li>
+				<div class="card-body ultimas-senhas">
+					<ul class="card-content" th:each="senha: ${senhasChamadas}">
+						<li class="senha" th:text="${senha}"></li>
 					</ul>
 				</div>
 			</div>
@@ -62,8 +62,9 @@
 	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	<script>
-		
+
 	</script>
 
 </body>
+
 </html>

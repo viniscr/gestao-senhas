@@ -1,8 +1,28 @@
 #botao-gerencial{
-	margin-top: 10px;
-	margin-right: 10px
+	margin: 20px;
+}
+
+#botao-cliente{
+	margin: 30px;
 }
 
 .btn-primary, .btn-info{
 	margin-top: 10px;
+}
+
+.painel-cliente {
+	padding: 20px;
+}
+
+.painel-gerente{
+	padding: 30px;
+}
+
+.card-header, p{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.senha{
+	font-size: 20px;
 }

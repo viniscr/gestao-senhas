@@ -1,38 +1,44 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
 
-<title>Painel Gerencial</title>
+	<title>Painel Gerencial</title>
 
-<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
-	rel="stylesheet" />
-<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
-	rel="stylesheet" />
-<link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+	<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
 </head>
-<body>
-	<div class="row">
-	<div class="card text-center col-lg-9">
-		<div class="card-header">Painel Gerencial</div>
-		<div class="card-body">
-			<form th:action="@{/gerente/proxima-senha}" method="GET">
-				<button class="btn btn-primary btn-block">Chamar Próxima
-					Senha</button>
-			</form>
 
-			<form th:action="@{/gerente/reiniciar}" method="POST">
-				<button class="btn btn-primary btn-block">Reiniciar
-					Contagem</button>
-			</form>
-			<a class="btn btn-info btn-block" href="/senhas">Retornar para
-				Painel de Cliente</a>
-		</div>
+<body>
+	<div class="nav justify-content-end">
+		<a id="botao-cliente" class="nav-item btn btn-info" href="/senhas">Área de Cliente</a>
 	</div>
+	<div class="row painel-gerente">
+		<div class="col">
+			<div class="card text-center">
+				<div class="card-header">Painel Gerencial</div>
+				<div class="card-body">
+					<form th:action="@{/gerente/proxima-senha}" method="GET">
+						<button class="btn btn-primary btn-block">Chamar Próxima Senha</button>
+					</form>
+					<form th:action="@{/gerente/reiniciar}" method="POST">
+						<button class="btn btn-primary btn-block">Reiniciar Contagem</button>
+					</form>
+				</div>
+				<div class="card-footer">
+					<div class="card-text">
+						<p>Última senha chamada:</p>
+						<h5 class="has-text-weight-bold" th:text="${senhaChamada} ?: 'Nenhuma senha a ser chamada'"></h6>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </body>
+
 </html>

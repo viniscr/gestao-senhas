@@ -39,9 +39,9 @@ public class SenhaService {
 
 		if (proximaSenha != null) {
 			proximaSenha.chamar();
-			setSenhaChamada(proximaSenha);
 			this.senhasChamadas.add(0, proximaSenha);
 		}
+		setSenhaChamada(proximaSenha);
 		
 		return proximaSenha;
 	}
@@ -59,7 +59,11 @@ public class SenhaService {
 	}
 
 	public List<Senha> getSenhasChamadas(){
-		return senhasChamadas;
+		if(senhasChamadas.size() > 5){
+			return senhasChamadas.subList(0,5);
+		}else{
+			return senhasChamadas;
+		}
 	}
 
 	public void setSenhasChamadas(List<Senha> senhasChamadas) {

@@ -18,7 +18,8 @@ public class SenhaGerenteController {
 	
 	@GetMapping
 	public ModelAndView PainelGerente() {		
-		ModelAndView modelAndView = new ModelAndView("PainelGerente");
+        ModelAndView modelAndView = new ModelAndView("PainelGerente");
+        modelAndView.addObject("senhaChamada", senhaService.getSenhaChamada());
 		
 		return modelAndView;
     }
