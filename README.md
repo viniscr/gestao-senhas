@@ -13,7 +13,7 @@ Na raiz do projeto executar o comando abaixo:
 
 #### Linux
 
-`./mvnw spring-boot:run`
+`mvn spring-boot:run`
 
 ## Urls de Acesso
 
